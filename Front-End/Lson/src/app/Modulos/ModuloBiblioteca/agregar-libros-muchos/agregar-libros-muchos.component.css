@@ -1,0 +1,25 @@
+.card{
+    width: 30%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 5%;
+    border: none;    
+    color: white;
+    background: black;
+}
+#file{
+    
+}
+#boton{
+    margin-top: 5%;
+    margin-left: 40%;
+}
+#cambios{
+    margin-left: 3%;
+}
+body{
+    background: black;
+}
+#fondo{
+    background: black;
+}

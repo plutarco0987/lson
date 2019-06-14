@@ -1,0 +1,74 @@
+<app-nav-biblioteca></app-nav-biblioteca>
+<div id="con">
+  <button type="button" class="btn btn-primary" id="con" routerLink="/Biblioteca/AgregarLibro">Agregar</button>
+</div>
+
+
+<div>
+
+
+  <h1>Libros que posee</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Titulo</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Sinopsis</th>
+        <th scope="col">Editorial</th>
+        <th scope="col">Año</th>
+        <th scope="col">Num.Paginas</th>
+        <th scope="col">Poster</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let libro of BibliotecaService.Libros">
+        
+        <td>{{ libro.titulo }}</td>
+        <td>{{ libro.autor }}</td>
+        <td>{{ libro.genero }}</td>
+        <td>{{ libro.sinopsis }}</td>
+        <td>{{ libro.editorial }}</td>
+        <td>{{ libro.anho }}</td>
+        <td>{{ libro.numPaginas }}</td>
+        <td>{{ libro.poster }}
+          <div class="upload-btn-wrapper" *ngIf="libro.poster==''">
+            <button class="btn btn-danger">Agregar Imagen</button>
+            <input type="file" name="myfile" (change)="onFileChanged($event,libro._id)"id="file" accept="image/png, image/jpeg" />
+          </div></td>
+        <button value="boton" class="btn btn-danger" (click)="eliminar(libro._id)">Eliminar</button>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<nav aria-label="...">
+  <ul class="pagination justify-content-center">
+
+    <li class="page-item" id="anterior">
+      <a class="page-link" (click)="paginado(encontramosen-1)" aria-disabled="true">Anterior</a>
+    </li>
+
+  
+
+  
+
+
+    <li class="page-item" *ngFor="let numeros of aux">
+      <a class="page-link" (click)="paginado(numeros)" id="{{numeros}}">
+
+        {{numeros}}
+      </a>
+    </li>
+
+  
+
+
+    <li class="page-item" id="siguiente">
+      <a class="page-link" (click)="paginado(encontramosen+1)" aria-disabled="true">Siguiente</a>
+    </li>
+
+
+  </ul>
+</nav>

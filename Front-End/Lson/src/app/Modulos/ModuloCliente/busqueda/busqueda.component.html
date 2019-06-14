@@ -1,0 +1,54 @@
+<app-cliente-home></app-cliente-home>
+
+<div *ngIf="parametro.length>=3">
+    <div class="fondo">
+        <h1>Resultado de busqueda: {{parametro}}</h1>
+        <div class="row">
+          <div *ngFor="let libros of Resultados">
+      
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+              <h6 id="titulo">{{libros.titulo}}</h6>
+              <div class="flipper" >
+                <div class="front" id="imagen">
+                  <img src="http://localhost:3000/Cliente/Foto/{{libros._id + '-' + libros.poster}}" width="200"
+                    height="300" />
+                </div>
+                <div class="back">
+                  
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          ...
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                          <a class="dropdown-item" (click)="agregaFavoritos(libros._id)">+Favoritos</a>
+                          <a class="dropdown-item" (click)="agregaPorLeer(libros._id)">+Por leer</a>
+                          <a class="dropdown-item"(click)="agregaLedios(libros._id)" >+Leidos</a>
+                          <a id="Favoritos" class="dropdown-item" routerLink="/Cliente/InformacionLibro/{{libros._id}}" (click)="envia(libros)"
+                                              type="hidden">Ver</a>
+                        </div>
+                      </div>
+      
+      
+                  <div class="card">
+                    <div class="card-body">                             
+                      <p><b>Autor:</b>{{libros.autor}}</p>
+                      <p><b>Sinopsis:</b>{{libros.sinopsis}}</p>
+                    </div>
+                  </div>
+      
+      
+                </div>
+              </div>
+            </div>
+      
+      
+      
+          </div>
+        </div>
+      
+        <br>
+    </div>
+</div>
+<div *ngIf="parametro.length<3">
+  <h1>La busqueda debe tener mas de 4 caracteres</h1>
+</div>

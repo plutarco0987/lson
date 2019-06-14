@@ -1,0 +1,45 @@
+.card {
+
+    width: 45em;
+    left: 20% !important;
+}
+h1{
+    text-align: center;
+   
+}
+#con{
+    height: 40px;
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    margin-right: 0%;
+}
+.page-link{
+    cursor: pointer;
+}
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .bbb {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    
+  }

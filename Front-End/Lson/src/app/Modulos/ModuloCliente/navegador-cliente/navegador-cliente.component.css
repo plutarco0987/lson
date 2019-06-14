@@ -1,0 +1,13 @@
+.btn{
+    margin: 5px;
+}
+.dropdown-item{
+    cursor: pointer;
+}
+h6{
+    color: white;
+}
+input {
+    overflow: visible;
+    width: 10%;
+}

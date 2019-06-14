@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+
+h1 {
+  font-size: 600%;
+  text-align: center;
+  color: red;
+}
+
+
+h2{
+   text-align: center; 
+   position: relative;
+}
+
+
+p{
+    text-align: center;
+    position: relative;
+}
+#registra{
+  cursor: pointer;
+  color: blue;
+}

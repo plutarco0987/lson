@@ -1,0 +1,51 @@
+
+
+<div id="fondo">
+    <app-nav-biblioteca></app-nav-biblioteca>
+  <div class="card">
+  <div class="input-group">
+
+    <div id="file">
+      <input type="file" accept=".csv"  (change)="onFileChanged($event)">
+    </div>
+    <div id="boton">
+      <div class="input-group-append">
+        <button class="btn btn-danger" type="button" id="inputGroupFileAddon04" (click)="enviar()">Cargar Archivo</button>
+        <button id="cambios"  type="button" class="btn btn-primary" *ngIf="preciono==true" (click)="guardarcambios()">Guardar cambios</button>
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+</div>
+
+
+
+<table class="table table-striped" *ngIf="preciono==true">
+  <thead>
+    <tr>
+      <th scope="col">Titulo</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Sinopsis</th>
+      <th scope="col">Editorial</th>
+      <th scope="col">Año</th>
+      <th scope="col">Num.Paginas</th>
+      <th scope="col">Quitar?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let libro of Libros">
+
+      <td>{{ libro.titulo }}</td>
+      <td>{{ libro.autor }}</td>
+      <td>{{ libro.genero }}</td>
+      <td>{{ libro.sinopsis }}</td>
+      <td>{{ libro.editorial }}</td>
+      <td>{{ libro.anho }}</td>
+      <td>{{ libro.numPaginas }}</td>  
+      <td><button type="button" class="btn btn-warning" (click)="quitar(libro._id)"> Quitar</button></td>   
+    </tr>
+  </tbody>
+</table>

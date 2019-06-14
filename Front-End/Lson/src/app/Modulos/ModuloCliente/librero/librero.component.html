@@ -1,0 +1,72 @@
+<app-cliente-home></app-cliente-home>
+
+
+
+<div class="fondo" onload="valor()">
+
+
+    <h1>{{ClienteService.Librero}}</h1>
+    <h1>{{cantidad}}</h1>
+    <div class="row">
+        <div *ngFor="let libros of ClienteService.LibrosFPL">
+
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <h6 id="titulo">{{libros.titulo}}</h6>
+                <div class="flipper" >
+                    <div class="front" id="imagen">
+                        <img src="http://localhost:3000/Cliente/Foto/{{libros._id + '-' + libros.poster}}" width="200"onerror="'this.src=http://localhost:3001/Biblioteca/FotoLibro/NoDisponible.jpg';"
+                            height="300" />
+                    </div>
+                    <div class="back">
+
+                        <div class="btn-group" role="group">
+                            <button id="btnGroupDrop1" type="button" class="btn btn-secondary " data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                ...
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="este"
+                                >
+                                <div *ngIf="Arreglo[0] == '+Favoritos'">
+                                    <a id="Favoritos" class="dropdown-item" (click)="agregaFavoritos(libros._id)"
+                                        type="hidden">{{Arreglo[0]}}</a>
+                                </div>
+                                <div *ngIf="Arreglo[1] == '+Por Leer'">
+                                    <a id="Favoritos" class="dropdown-item" (click)="agregaPorLeer(libros._id)"
+                                        type="hidden">{{Arreglo[1]}}</a>
+                                </div>
+                                <div *ngIf="Arreglo[2] == '+Leido'">
+                                        <a id="Favoritos" class="dropdown-item" (click)="agregaLedios(libros._id)"
+                                            type="hidden">{{Arreglo[2]}}</a>
+                                    </div>
+                                <div *ngIf="Arreglo[3] == 'Quitar'">
+                                    <a id="Favoritos" class="dropdown-item" (click)="quitar(libros._id)"
+                                        type="hidden">{{Arreglo[3]}}</a>
+                                </div>
+                                <a id="Favoritos" class="dropdown-item" routerLink="/Cliente/InformacionLibro/{{libros._id}}" (click)="envia(libros)"
+                                        type="hidden">Ver</a>
+                                
+                                
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+                            <div class="card-body">
+                                <p><b>Autor:</b>{{libros.autor}}</p>
+                                <p><b>Año:</b>{{libros.anho}}</p>
+                                <p><b>Sinopsis:</b>{{libros.sinopsis}}</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <br>
+</div>

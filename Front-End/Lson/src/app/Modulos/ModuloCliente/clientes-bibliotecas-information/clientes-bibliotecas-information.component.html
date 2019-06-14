@@ -1,0 +1,16 @@
+<div class="fondo">
+    <div class="card" style="width: 18rem;" *ngFor="let b of biblio">
+        <img src="http://localhost:3000/Cliente/FotoBiblioteca/{{b.poster}}" class="card-img-top" alt="..." width="150"
+            height="210">
+        <div class="card-body">
+            <h5>{{b.nombre}}</h5>
+            <h6 class="card-text"> Ciudad: {{b.ciudad}} </h6>
+            <h6 class="card-text"> Email: {{b.email}}</h6>
+            <h6 class="card-text">Telefono: {{b.telefono}} </h6>
+            <h6 class="card-text">Direccion: {{b.direccion}} </h6>
+        </div>
+        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-danger" id="boton2" routerLink="/Cliente/LibrosBiblioteca/{{b._id}}">Ver Libros</button>
+        </div>
+    </div>
+</div>

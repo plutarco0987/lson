@@ -1,0 +1,32 @@
+.card{
+    border-bottom-color: black;
+    border-top-color: black;
+    border-left-color: black;
+    border-right-color: black;
+    display:inline-block;    
+    margin: 20px;
+    
+}
+.fondo{
+    background-color: black;
+
+}
+.btn-group{  
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    
+}
+#boton1{
+    border-radius: 200px 200px 200px 200px;
+-moz-border-radius: 200px 200px 200px 200px;
+-webkit-border-radius: 200px 200px 200px 200px;
+    margin: 5px;
+}
+#boton2{
+    border-radius: 200px 200px 200px 200px;
+-moz-border-radius: 200px 200px 200px 200px;
+-webkit-border-radius: 200px 200px 200px 200px;
+    margin: 5px;
+}
+

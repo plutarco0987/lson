@@ -1,0 +1,22 @@
+
+<app-cliente-home></app-cliente-home>
+
+<div id="contenido">
+
+
+<h1>{{llego.titulo}}</h1>
+<img src="http://localhost:3000/Cliente/Foto/{{llego._id + '-' + llego.poster}}" width="200"
+              height="300" />
+              <h5>Año: {{llego.anho}}</h5>
+  
+              <h5>Autor: {{llego.autor}}</h5>
+              
+              <h5>Editorial: {{llego.editorial}}</h5>
+              
+              <h5>Genero: {{llego.genero}}</h5>
+              <h5>Sinopsis: {{llego.sinopsis}}</h5> 
+              <h5>Bibliotecas:</h5>
+              <div *ngFor="let x of bibliotecas">
+                <a id="empresa">{{x}}</a>
+              </div>
+            </div>

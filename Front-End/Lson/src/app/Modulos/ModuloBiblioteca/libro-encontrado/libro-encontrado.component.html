@@ -1,0 +1,38 @@
+<app-nav-biblioteca></app-nav-biblioteca>
+
+<div class="fondo">
+
+  <div class="row" >
+    <div *ngFor="let libros of libro">
+      
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <h6 class="titulo">{{libros.titulo}}</h6>
+            <div class="flipper">
+                <div class="front">
+                    <img src="http://localhost:3000/Biblioteca/FotoLibro/{{libros._id + '-' + libros.poster}}" 
+                    width="200" height="300" 
+                    onerror="'this.src=http://localhost:3001/Biblioteca/FotoLibro/NoDisponible.jpg';"/>
+                </div>
+                <div class="back">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <p><b>Autor:</b>{{libros.autor}}</p>
+                            <p><b>Sinopsis:</b>{{libros.sinopsis}}</p>
+                            <a class="btn btn-outline-secondary" (click)="agregar(libros._id)" id="boton">Agregar</a>
+                        </div>
+                      </div>
+                    
+                   
+                </div>
+            </div>
+        </div>
+
+      
+
+    </div>
+  </div>
+  
+  <br>
+</div>
+<h1 *ngIf="fallo==true"> No se encontraron libros con ese nombre</h1>

@@ -1,0 +1,77 @@
+<div id="fondo">
+  <app-nav-biblioteca></app-nav-biblioteca>
+
+
+  <br>
+  <div class="card" style="width: 30rem;">
+    <div class="card-body">
+      <h2 class="card-title">Libro</h2>
+  
+      <form #librosForm="ngForm" enctype="multipart/form-data" action="http://localhost:3000/Biblioteca/Imagen"  method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputNombre">Titulo</label>
+            <input type="text" class="form-control" id="inputTituo" #titulo="ngModel" [(ngModel)]="BibliotecaService.selectedLibro.titulo" placeholder="Harry Potter" name="titulo">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputAutor">Autor</label>
+            <input type="text" class="form-control" id="inputAutor" placeholder="J. K. Rowling" #autor="ngModel"[(ngModel)]="BibliotecaService.selectedLibro.autor" name="autor">
+          </div>
+          <div class="form-group col-md-12">
+            <label for="inputSinopsis">Sinopsis</label>
+            <input type="email" class="form-control" id="inputSinopsis" placeholder="Este es un ejemplo de sinopsis" #sinopsi="ngModel"[(ngModel)]="BibliotecaService.selectedLibro.sinopsis" name="sinopsis">
+          </div>
+          <div class="form-group col-md-10">
+            <label for="inputEditorial">Editorial</label>
+            <input type="text" class="form-control" id="inputEditorial" placeholder="Salamandra"#editorial="ngModel"[(ngModel)]="BibliotecaService.selectedLibro.editorial" name="editorial">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputAño">Año</label>
+            <input type="text" class="form-control" id="inputAño" placeholder="1997"#anho="ngModel"[(ngModel)]="BibliotecaService.selectedLibro.anho" name="anho">
+          </div>
+          <div class="form-group col-md-4">
+            <label>Genero</label>
+            <select class="form-control" id="exampleFormControlSelect1" #genero="ngModel"[(ngModel)]="BibliotecaService.selectedLibro.genero" name="genero">            
+              <option selected>Acción</option>
+              <option *ngFor="let generos of BibliotecaService.Generos">{{generos.Genero}}</option>
+            </select>
+  
+          </div>
+  
+          <div class="form-group col-md-4">
+            <label for="inputNumPaginas">NumPag</label>
+            <input type="text" class="form-control" id="inputNumPaginas" placeholder="99" #NumPaginas="ngModel" [(ngModel)]="BibliotecaService.selectedLibro.NumPaginas" name="NumPaginas">
+          </div>
+          <br>
+  
+          <br><br><br>
+  
+        </div>
+  
+  
+        
+          <label>Imagen de libro</label>
+          <input type="file" (change)="onFileChanged($event)"id="file" accept="image/png, image/jpeg" name="Myimagen"  #imagen="ngModel"  [(ngModel)]="BibliotecaService.selectedLibro.poster" name="imagen"required>
+          
+       
+  
+  
+  
+  
+        <div class="card-action">
+    
+    <div class="input-field col s12">
+        
+        <button data-dismiss="alert" class="btn btn-primary" id="btnactualizar" (click)="addLibro(librosForm)">Agregar</button>
+  
+        <button class="btn btn-warning" id="btncancelar" (click)="resetForm(librosForm)">Cancelar</button>
+        <span aria-hidden="true">&times;</span>
+    </div>
+     
+  </div>
+       
+      </form>    
+    </div>
+  </div>
+  
+</div>
